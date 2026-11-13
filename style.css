@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans';
+}
+
+header {
+    padding: 10px max(50px, calc(50% - 720px));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: #0a2028;
+    color: white;
+}
+
+header :nth-child(3) {
+    margin-left: auto;
+}
+
+header img, footer img {
+    width: clamp(30px, calc(30px + 20 * (100vw - 320px) / 1120), 50px);
+}
+
+header h1 {
+    font-size: clamp(20px, calc(20px + 12 * (100vw - 320px) / 1120), 32px);
+}
+
+main {
+    padding:10px max(15px, calc(50% - 720px));
+    background-image: url(./assets/img/backgrounds/bg3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book_card {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: #0e2c36;
+    color: white;
+    box-shadow: 0 0 50px 1px rgba(255, 255, 255, 0.502);
+}
+
+.book_header {
+    padding: 0;
+    height: 60px;
+    display: flex;
+}
+
+h2 {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    font-size: 18px;
+}
+
+.book_cover {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book_cover img {
+    width: 65px;
+    filter: drop-shadow(5px 5px 10px rgb(168, 168, 168));
+}
+
+.book_stats {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.book_stats span:first-child {
+    color: red;
+    font-weight: 700;
+}
+
+.book_stats span:nth-child(2) {
+    margin-left: auto;
+}
+
+.book_stats button {
+    border: none;
+    background-color: transparent;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: red;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.liked-heart {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.book_infos {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.book_card hr {
+    border: none;
+    border-top: 1px solid #5ab1c4;
+}
+
+.book_card h3 {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.book_card table {
+    display: flex;
+    font-size: 12px;
+    text-align: left;
+}
+
+.book_card table th {
+    padding-right: 20px;
+}
+
+.book_comments {
+    margin-top: 10px;
+    padding: 5px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    background-color: #0c2730;
+}
+
+.book_comments p {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+}
+
+.comments_input {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comments_input input {
+    width: 250px;
+    padding: 5px;
+    border: none;
+    background-color:#1b435190;
+    color: white;
+}
+
+.comments_input input:focus {
+    outline: none;
+}
+
+.comments_input input:focus::placeholder{
+    width: 0;
+    border: none;
+}
+
+.comments_input button {
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+.comments_input button:hover, .comments_input button:focus img {
+    filter: drop-shadow(5px 5px 10px rgb(12, 73, 215));
+    transform: rotate(-40deg);
+}
+
+.comments_input img {
+    width: 25px;
+}
+
+footer {
+    padding: 10px max(50px, calc(50% - 720px));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: #0a2028;
+    text-align: center;
+    color: white;
+}
