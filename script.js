@@ -18,7 +18,7 @@ function openSummary(index) {
     const summary = document.getElementById(`summary_${index}`);
     summary.classList.remove('d_none');
     summary.scrollTop = 0;
-    summary.focus();
+    summary.focus({ preventScroll: true });
 }
 
 // CLOSE ALL SUMMARIES
