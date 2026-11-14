@@ -1,5 +1,5 @@
-let contentRef = document.getElementById('content');
-const scrollBtn = document.getElementById('srollToTop');
+const contentRef = document.getElementById('content');
+const scrollBtn = document.getElementById('scrollToTop');
 
 // INIT FUNCTION
 function init() {
@@ -16,9 +16,16 @@ function init() {
 function openSummary(index) {
     closeAllSummaries();
     const summary = document.getElementById(`summary_${index}`);
+    const bookCard = document.getElementById(`book_card_${index}`);
     summary.classList.remove('d_none');
     summary.scrollTop = 0;
     summary.focus({ preventScroll: true });
+    if (bookCard) {
+        bookCard.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
 }
 
 // CLOSE ALL SUMMARIES
@@ -44,7 +51,7 @@ function closeSummary(index) {
 
 // LIKE FUNCTION
 function toggleLike(index) {
-    if (books[index].liked == false) {
+    if (books[index].liked === false) {
         books[index].liked = true;
         books[index].likes++;
     } else {
@@ -57,14 +64,14 @@ function toggleLike(index) {
 
 // ADD COMMENT FUNCTION
 function addComment(index) {
-    let inputRef = document.getElementById(`input_${index}`);
-    let commentInput = inputRef.value.trim();
-    if (inputRef.value !== "") {
+    const inputRef = document.getElementById(`input_${index}`);
+    const commentInput = inputRef.value.trim();
+    if (commentInput !== '') {
         books[index].comments.unshift(
-            {"name": "Du", "comment": commentInput}
+            { 'name': 'Du', 'comment': commentInput }
         );
     }
-    inputRef.value = "";
+    inputRef.value = '';
     saveToLocalStorage();
     init();
 }
@@ -73,19 +80,21 @@ function addComment(index) {
 function checkScrollPos() {
     if (!scrollBtn) return;
     if (window.scrollY > 300) {
-        scrollBtn.classList.add("visible");
+        scrollBtn.classList.add('visible');
     } else {
-        scrollBtn.classList.remove("visible");
+        scrollBtn.classList.remove('visible');
     }
 }
 
-window.addEventListener("scroll", checkScrollPos);
+// ADD EVENTLISTENER TO THE WINDOW
+window.addEventListener('scroll', checkScrollPos);
 
+// SCROLL TO TOP
 if (scrollBtn) {
-    scrollBtn.addEventListener("click", () => {
+    scrollBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: 'smooth'
         });
     });
 }

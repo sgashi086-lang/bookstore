@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #0a2028;
-    font-family: 'Open Sans'; 
+    font-family: 'Open Sans', sans-serif; 
 }
 
 header {
@@ -41,7 +41,7 @@ header h1 {
 main {
     position: relative;
     flex: 1;
-    padding:10px max(15px, calc(50% - 720px));
+    padding: 10px max(15px, calc(50% - 720px));
     background-image: url(./assets/img/backgrounds/bg3.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -127,11 +127,11 @@ section {
 }
 
 .book_summary h3 {
-    font-size: 18px !important;
+    font-size: 18px;
 }
 
 .book_summary p {
-    font-size: 16px !important;
+    font-size: 16px;
     line-height: 1.5;
     text-align: justify;
     hyphens: auto;
@@ -152,12 +152,11 @@ section {
 
 .book_header {
     height: 60px;
-    padding: 0;
     display: flex;
 }
 
 h2 {
-    font-family: 'Libre Baskerville';
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 400;
     text-align: left;
@@ -177,7 +176,7 @@ h2 {
 .book_cover img {
     width: 65px;
     filter: drop-shadow(0 0 50px rgba(240, 236, 236, 0.336));
-    transition: all 1s ease;
+    transition: scale 1s ease, filter 1s ease;
 }
 
 .book_cover button {
@@ -188,8 +187,8 @@ h2 {
 }
 
 .book_cover button:hover img {
-    width: 105px;
-} 
+    scale: 1.5;
+}
 
 .book_stats {
     padding: 5px;
@@ -248,7 +247,6 @@ h2 {
 }
 
 .book_card table {
-    display: flex;
     font-size: 12px;
     text-align: left;
 }
@@ -300,8 +298,7 @@ h2 {
 }
 
 .comments_input input:focus::placeholder{
-    width: 0;
-    border: none;
+    color: transparent;
 }
 
 .comments_input button {
@@ -315,7 +312,7 @@ h2 {
 }
 
 .comments_input button img {
-    transition: all 1s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .comments_input button:hover img {
@@ -327,11 +324,10 @@ h2 {
     width: 25px;
 }
 
-#srollToTop {
-    all: unset;
+#scrollToTop {
     position: fixed;
     bottom: 50px;
-    right: max(50px, calc((100vw - 1200px) / 2 + 50px));
+    right: max(50px, calc((100vw - 1440px) / 2 + 50px));
     width: 50px;
     height: 50px;
     display: none;
@@ -354,14 +350,14 @@ h2 {
         display 0.3s allow-discrete;
 }
 
-#srollToTop.visible {
+#scrollToTop.visible {
     display: flex;
     opacity: 1;
     transform: translateY(0);
 }
 
 @starting-style {
-    #srollToTop.visible {
+    #scrollToTop.visible {
         opacity: 0;
         transform: translateY(20px);
     }
