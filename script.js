@@ -68,7 +68,7 @@ function addComment(index) {
     const commentInput = inputRef.value.trim();
     if (commentInput !== '') {
         books[index].comments.unshift(
-            { 'name': 'Du', 'comment': commentInput }
+            { 'name': 'Marco', 'comment': commentInput }
         );
     }
     inputRef.value = '';
