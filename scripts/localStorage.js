@@ -1,5 +1,3 @@
-// localStorage.clear(); 
-
 // SAFE TO LOCALSTORAGE
 function saveToLocalStorage() {
     localStorage.setItem("books", JSON.stringify(books));
